@@ -46,6 +46,7 @@ fi
 mkdir -p project
 
 cat <<EOS>> "$PLUGIN_SBT"
+
 addSbtPlugin("com.lucidchart" % "sbt-scalafmt" % "$NEO_SBT_SCALAFMT_VERSION")
 EOS
 
