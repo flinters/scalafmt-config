@@ -2,8 +2,8 @@
 
 set -eu
 
-NEO_SBT_SCALAFMT_VERSION=1.12
-SCALAFMT_VERSION=1.2.0
+NEO_SBT_SCALAFMT_VERSION=1.15
+SCALAFMT_VERSION=1.4.0
 
 CURL="curl"
 CONF_URL="https://raw.githubusercontent.com/septeni-original/scalafmt-config/master/.scalafmt.conf"
