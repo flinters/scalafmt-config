@@ -2,8 +2,7 @@
 
 set -eu
 
-NEO_SBT_SCALAFMT_VERSION=1.15
-SCALAFMT_VERSION=1.4.0
+SCALAFMT_VERSION=2.0.0
 
 CURL="curl"
 CONF_URL="https://raw.githubusercontent.com/septeni-original/scalafmt-config/master/.scalafmt.conf"
@@ -47,10 +46,5 @@ mkdir -p project
 
 cat <<EOS>> "$PLUGIN_SBT"
 
-addSbtPlugin("com.lucidchart" % "sbt-scalafmt" % "$NEO_SBT_SCALAFMT_VERSION")
-EOS
-
-cat <<EOS> "$SCALAFMT_SBT"
-scalafmtVersion in ThisBuild := "$SCALAFMT_VERSION"
-scalafmtOnCompile in ThisBuild := true
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "$SCALAFMT_VERSION")
 EOS
