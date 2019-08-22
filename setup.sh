@@ -2,7 +2,7 @@
 
 set -eu
 
-SCALAFMT_VERSION=2.0.0
+SCALAFMT_VERSION=2.0.1
 
 CURL="curl"
 CONF_URL="https://raw.githubusercontent.com/septeni-original/scalafmt-config/master/.scalafmt.conf"
