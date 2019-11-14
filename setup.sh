@@ -2,14 +2,13 @@
 
 set -eu
 
-SCALAFMT_VERSION=2.2.1
+SBT_SCALAFMT_VERSION=2.2.1
 
 CURL="curl"
 CONF_URL="https://raw.githubusercontent.com/septeni-original/scalafmt-config/master/.scalafmt.conf"
 
 CONF=".scalafmt.conf"
 PLUGIN_SBT="project/plugins.sbt"
-SCALAFMT_SBT="scalafmt.sbt"
 
 error() {
   msg="$1"
@@ -32,10 +31,6 @@ if [ -e "$CONF" ]; then
   error "$CONF already exists"
 fi
 
-if [ -e "$SCALAFMT_SBT" ]; then
-  error "$SCALAFMT_SBT already exists"
-fi
-
 if [ ! -e "build.sbt" ]; then
   error "There is no ./build.sbt. Not a scala project?"
 fi
@@ -46,5 +41,5 @@ mkdir -p project
 
 cat <<EOS>> "$PLUGIN_SBT"
 
-addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "$SCALAFMT_VERSION")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "$SBT_SCALAFMT_VERSION")
 EOS
